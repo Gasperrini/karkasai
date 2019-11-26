@@ -1,0 +1,392 @@
+/*images*/
+
+.img-gitaristas {
+    width: 50px;
+    float: left;
+}
+
+.img-home {
+    width: 18px;
+}
+
+#img-guitarist1 {
+    width: 250px;
+    padding-left: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#img-guitarist2 {
+    width: 250px;
+    padding-right: 50px;
+    padding-left: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#img-guitarist3 {
+    width: 250px;
+    float: right;
+    padding-right: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.img-guitarists {
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+}
+
+/*images*/
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    color: #8A8985; /* teksto spalva */
+    font-family: Arial, Helvetica, sans-serif; /* šriftas */
+    font-size: 12px; /* teksto dydis */
+    background-color: rgb(185, 182, 182);
+    background-image: url("../img/background.jpg");
+}
+
+a {
+    color: #1b1b1b;
+}
+
+/* turinio blokelis */
+#content {
+    width: 900px;
+    background-color: #fff;
+    float: left;
+}
+
+nav {
+    width: 900px;
+    background-color: #fff;
+    float: left;
+}
+
+#footer {
+    width: 900px;
+    background-color: #fff;
+    float: left;
+    text-align: center;
+    border-top: 1px solid rgb(97, 91, 91);
+}
+
+/* pagrindinis puslapio blokas */
+#body {
+    width: 900px;
+    margin: 0px auto; /* bloko centravimas puslapio viduje */
+}
+
+/* viršutinė puslapio dalis */
+#header {
+    width: 900px;
+    height: 70px;
+    background-color: #fff;
+    float: left;
+}
+
+#slogan {
+    margin: 20px 0px 0px 15px;
+    color: rgb(10, 9, 20);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    float: inherit;
+}
+
+#content p{
+    padding: 15px;
+    text-align: justify;
+    font-size: 16px;
+}
+
+#content h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(243, 243, 243);
+    position: sticky;
+    top: 0;
+}
+
+nav li {
+    float: left;
+    /*border-right: 1px solid black;
+    border-left: 1px solid black;*/
+    height: 40px;
+}
+
+nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: rgb(124, 241, 124);
+}
+
+nav .active {
+    background-color: rgb(164, 231, 156);
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 60px;
+}
+nav ul li:hover > ul {
+    display:inherit;
+}
+
+nav ul ul li {
+    width:230px;
+    float:left;
+    display:block;
+    position: relative;
+}
+
+nav ul .dropdown ul{
+    display: none;
+}
+
+nav ul .dropdown:hover ul{
+    display: block;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+#myBtn:hover {
+    outline-color: black;
+}
+
+.myBtn-image {
+    width: 50px;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+.container hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: rgb(227, 245, 126);
+    color: black;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+.textarea {
+    box-sizing: border-box;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 70px auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 1000px; /* Could be more or less, depending on screen size */
+    height: 550px;
+    overflow: auto;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+  }
+
+  .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+  }
+
+  .page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+  }
+
+  .page-link:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  .page-item:last-child .page-link {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+  }
+
+  .pagination-lg .page-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .pagination-lg .page-item:first-child .page-link {
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+  }
+
+  .pagination-lg .page-item:last-child .page-link {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+
+  .pagination-sm .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .pagination-sm .page-item:first-child .page-link {
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+  }
+
+  .pagination-sm .page-item:last-child .page-link {
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown {
+    display: inline-block;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
