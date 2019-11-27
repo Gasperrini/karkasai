@@ -7,7 +7,7 @@
             <li><a href="news"><b>Naujienos</b></a></li>
             <li><a href="guitarists"><b>Gitaristai</b></a></li>
             <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
-            <li style="float:right"><a href="contacts"><b>Klauskite!</b></a></li>
+            <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
                 <!-- Authentication Links -->
                 @guest
                     <li style="float:right">
@@ -48,6 +48,7 @@
             @foreach($questions as $question)
                 <h4 style="padding-left:10px; padding-top:5px; border-top-style:solid">Klausima uzdave: {{$question->el_pastas}}</h4>
                 <h3 style="padding-left:10px; margin-top:0px; font-size:17px">{{$question->klausimas}}</h3>
+                <h5 style="padding-left:10px; margin-top:0px;">Klausimas uzduotas: {{$question->created_at}}</h5>
             @endforeach
             {{$questions->links()}}
         @else

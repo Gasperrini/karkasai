@@ -41,7 +41,7 @@
 
     </div>
 
-<form method="POST" action="/news"></form>
+<form method="POST" action="{{route('registrations.store')}}"></form>
     <div class="container">
         <p>Prašome užpildyti visus laukus.</p>
         <hr>
@@ -63,7 +63,7 @@
         <label for="tel_nr"><b>Telefono nr.</b></label>
         <input type="text" placeholder="Įveskite savo telefono nr." name="tel_nr" required>
         <hr>
-        <input type="submit"  value="Submit" class="registerbtn"><b>Registruotis</b>
+        <button type="submit" class="registerbtn"><b>Registruotis</b></button>
     </div>
     </form>
 @endsection

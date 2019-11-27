@@ -17,6 +17,8 @@ class CreateQuestionsTable extends Migration
             $table->increments('id');
             $table->string('el_pastas', 50);
             $table->text('klausimas');
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
             $table->unsignedInteger('fk_Darbuotojas')->nullable();
             $table->index(["fk_Darbuotojas"], 'fk_darbuotojai_id');
 

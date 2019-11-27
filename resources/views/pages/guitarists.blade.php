@@ -7,7 +7,7 @@
             <li><a href="news"><b>Naujienos</b></a></li>
             <li><a class="active" href="guitarists"><b>Gitaristai</b></a></li>
             <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
-            <li style="float:right"><a href="contacts"><b>Klauskite!</b></a></li>
+            <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
             <li style="float:right">
@@ -43,9 +43,9 @@
             <img id="img-guitarist1" src="img/gitaristas-1.jpg">
             <img id="img-guitarist2" src="img/gitaristas-2.jpg">
             <img id="img-guitarist3" src="img/gitaristas-3.jpg">
-            <b style="padding-left: 60px">Petras Petrauskas</b>
-            <b style="padding-left: 175px; padding-right: 100px">Andrius Rimiškis</b>
-            <b style="float:right; padding-right: 65px">Virgis Stakėnas</b>
+            <b style="padding-left: 60px">{{$mokytojai[0]->vardas}} {{$mokytojai[0]->pavarde}}</b>
+            <b style="padding-left: 175px; padding-right: 100px">{{$mokytojai[1]->vardas}} {{$mokytojai[1]->pavarde}}</b>
+            <b style="float:right; padding-right: 65px">{{$mokytojai[2]->vardas}} {{$mokytojai[2]->pavarde}}</b>
         </p>
 
         <h2>Išdrįskite pradėti groti gitara jau šiandien!</h2>
@@ -59,7 +59,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h1 style="text-align: center">Petras Petrauskas</h1><br>
+                <h1 style="text-align: center">{{$mokytojai[0]->vardas}} {{$mokytojai[0]->pavarde}}</h1><br>
                 <img class="img-guitarists" src="img/satriani-1.jpg">
                 <img class="img-guitarists" src="img/satriani-2.jpg">
                 <img class="img-guitarists" src="img/satriani-3.jpg">
@@ -75,7 +75,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h1 style="text-align: center">Andrius Rimiškis</h1>
+                <h1 style="text-align: center">{{$mokytojai[1]->vardas}} {{$mokytojai[1]->pavarde}}</h1>
                 <img class="img-guitarists" src="img/rimiskis-1.jpg">
                 <img class="img-guitarists" src="img/rimiskis-2.jpg">
                 <img class="img-guitarists" src="img/rimiskis-3.jpeg">
@@ -91,7 +91,7 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h1 style="text-align: center">Virgis Stakėnas</h1>
+                <h1 style="text-align: center">{{$mokytojai[2]->vardas}} {{$mokytojai[2]->pavarde}}</h1>
                 <img class="img-guitarists" src="img/stakenas-1.jpg">
                 <img class="img-guitarists" src="img/stakenas-2.jpg">
                 <img class="img-guitarists" src="img/stakenas-3.jpg">

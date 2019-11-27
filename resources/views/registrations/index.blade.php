@@ -7,7 +7,7 @@
             <li><a href="news"><b>Naujienos</b></a></li>
             <li><a href="guitarists"><b>Gitaristai</b></a></li>
             <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
-            <li style="float:right"><a href="contacts"><b>Klauskite!</b></a></li>
+            <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
                 <!-- Authentication Links -->
                 @guest
                     <li style="float:right">

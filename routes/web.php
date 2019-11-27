@@ -11,8 +11,6 @@
 |
 */
 
-use App\Http\Controllers\Klientu_Registracijos_Controller;
-
 Route::get('/', 'PagesController@index');
 
 Route::get('/contacts', 'PagesController@contacts');
@@ -25,12 +23,14 @@ Route::get('/news', 'PagesController@news');
 
 Route::resource('questions', 'QuestionsController');
 
+Route::resource('registrations', 'RegistrationsController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'AdminController@dashboard');
 
-Route::resource('reservations', 'Klientu_Registracijos_Controller');
+Route::resource('guitarists', 'MokytojaiController');
 
-Route::post('form', 'PagesController@insertForm');
+//Route::get('registrations', 'MokytojaiController@index1');

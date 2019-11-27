@@ -3,11 +3,11 @@
 @section('content')
 <nav role="navigation">
                 <ul>
-                    <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
-                    <li><a href="news"><b>Naujienos</b></a></li>
-                    <li><a href="guitarists"><b>Gitaristai</b></a></li>
-                    <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
-                    <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
+                    <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../public/img/home.png"></a></li>
+                    <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
+                    <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
+                    <li><a href="/GitarosMeistrai/public/form"><b>Registruokitės pamokoms</b></a></li>
+                    <li style="float:right" class="active"><a href="create"><b>Klauskite!</b></a></li>
                     <!-- Authentication Links -->
                 @guest
                 <li style="float:right">
@@ -24,7 +24,7 @@
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a></li>
-                        <li style="float:right"><a class="dropdown-item" href="admin">Administracijos puslapis</a></li>
+                        <li style="float:right"><a class="dropdown-item" href="/GitarosMeistrai/public/admin">Administracijos puslapis</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -34,23 +34,27 @@
             @endguest
                 </ul>
             </nav>
-
+            @if (session('status'))
+            <div>
+                <h3 style="text-align: center">{{ session('status') }}</h3>
+            </div>
+        @endif
 		
 			<div id="content">
 				<h2 id="pageTitle">Kilo neaiškumų? Klauskite!</h2>
 			</div>
             
             <div>
-            <form method='post' action="{{url('Question')}}">
+            <form method='POST' action="{{route('questions.store')}}">
                 <div class="container">
                   <p>Prašome užpildyti visus laukus.</p>
                   <hr>
-
-                  <label for="email"><b>El. paštas</b></label>
-                  <input type="text" placeholder="Įveskite savo el. paštą" name="email" required>
+                    @csrf
+                  <label for="el_pastas"><b>El. paštas</b></label>
+                  <input type="text" placeholder="Įveskite savo el. paštą" name="el_pastas" required>
 
                   <b>Jūsų klausimas</b>
-                  <textarea class="textarea" cols="108,7" rows="5" placeholder="Rašykite savo klausimą"></textarea>
+                  <textarea class="textarea" cols="108,7" rows="5" placeholder="Rašykite savo klausimą" name="klausimas" required></textarea>
 
                   <button type="submit" class="registerbtn"><b>Siųsti klausimą</b></button>
                 </div>

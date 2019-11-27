@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Question;
 use DB;
-
-class QuestionsController extends Controller
+use App\Mokytojai;
+class MokytojaiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,14 @@ class QuestionsController extends Controller
      */
     public function index()
     {
-        //$questions = DB::select('SELECT * FROM questions');
-        //$questions = Question::orderBy('id','desc')->take(1)->get();
-        //$questions = Question::orderBy('id','desc')->get();
+        $mokytojai = Mokytojai::orderBy('id','asc')->paginate(10);
+        return view ('pages.guitarists')->with('mokytojai', $mokytojai);
+    }
 
-        $questions = Question::orderBy('id','desc')->paginate(10);
-        return view ('questions.index')->with('questions', $questions);
+    public function index1()
+    {
+        $mokytojai = Mokytojai::orderBy('id','asc')->paginate(10);
+        return view ('registrations.index')->with('mokytojai', $mokytojai);
     }
 
     /**
@@ -30,7 +31,7 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        return view('questions.create');
+        //
     }
 
     /**
@@ -41,16 +42,7 @@ class QuestionsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'el_pastas'    =>  'required',
-            'klausimas'    =>  'required'
-        ]);
-
-        $post = $request->all();
-
-        Question::create($post);
-
-        return redirect('/questions/create')->with('status', 'Klausimas issiustas!');
+        //
     }
 
     /**
