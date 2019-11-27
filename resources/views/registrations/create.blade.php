@@ -4,10 +4,10 @@
 <nav role="navigation">
         <ul>
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
-            <li><a href="news"><b>Naujienos</b></a></li>
-            <li><a href="guitarists"><b>Gitaristai</b></a></li>
-            <li><a class="active" href="form"><b>Registruokitės pamokoms</b></a></li>
-            <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
+            <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
+            <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
+            <li><a class="active" href="create"><b>Registruokitės pamokoms</b></a></li>
+            <li style="float:right"><a href="/GitarosMeistrai/public/questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
             <li style="float:right">
@@ -41,12 +41,13 @@
 
     </div>
 
-<form method="POST" action="{{route('registrations.store')}}"></form>
+    <div>
+<form method="POST" action="{{route('registrations.store')}}">
     <div class="container">
         <p>Prašome užpildyti visus laukus.</p>
         <hr>
-        @csrf
         <b>Pasirinkite norimą gitaros mokytoją</b><br><br>
+        @csrf
         <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
         <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
         <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
@@ -66,6 +67,7 @@
         <button type="submit" class="registerbtn"><b>Registruotis</b></button>
     </div>
     </form>
+    </div>
 @endsection
 
 @section('scripts')

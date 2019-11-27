@@ -6,7 +6,7 @@
                     <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../public/img/home.png"></a></li>
                     <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
                     <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
-                    <li><a href="/GitarosMeistrai/public/form"><b>Registruokitės pamokoms</b></a></li>
+                    <li><a href="/GitarosMeistrai/public/registrations/create"><b>Registruokitės pamokoms</b></a></li>
                     <li style="float:right" class="active"><a href="create"><b>Klauskite!</b></a></li>
                     <!-- Authentication Links -->
                 @guest

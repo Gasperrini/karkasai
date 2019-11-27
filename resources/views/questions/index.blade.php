@@ -6,7 +6,7 @@
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
             <li><a href="news"><b>Naujienos</b></a></li>
             <li><a href="guitarists"><b>Gitaristai</b></a></li>
-            <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
+            <li><a href="registrations/create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
                 <!-- Authentication Links -->
                 @guest
@@ -39,12 +39,13 @@
 
     <div id = 'content' style="text-align:center">
             <button><a href="admin"><b>Atgal i administracijos puslapi</b></a></button>
-            <button><a href="reservations"><b>Klientu registracijos</b></a></button>
+            <button><a href="registrations"><b>Klientu registracijos</b></a></button>
     </div>
 
     <div id ='content'>    
         <h1 style="text-align:center">Klientu klausimai</h1>
         @if(count($questions) > 0)
+        {{$questions->links()}}
             @foreach($questions as $question)
                 <h4 style="padding-left:10px; padding-top:5px; border-top-style:solid">Klausima uzdave: {{$question->el_pastas}}</h4>
                 <h3 style="padding-left:10px; margin-top:0px; font-size:17px">{{$question->klausimas}}</h3>

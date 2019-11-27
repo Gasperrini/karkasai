@@ -13,7 +13,7 @@
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
             <li><a href="news"><b>Naujienos</b></a></li>
             <li><a href="guitarists"><b>Gitaristai</b></a></li>
-            <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
+            <li><a href="registrations/create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
@@ -46,7 +46,7 @@
         <h1 style="text-align:center">Sveiki prisijunge, {{Auth::user()->name}}</h1>
         <h3 style="text-align:center">Pasirinkite ka norite perziureti</h1>
             <button><a href="questions"><b>Klientu klausimai</b></a></button>
-            <button><a href="reservations"><b>Klientu registracijos</b></a></button>
+            <button><a href="registrations"><b>Klientu registracijos</b></a></button>
     </div>
 
 @endsection

@@ -18,7 +18,7 @@ class RegistrationsController extends Controller
         //$questions = Question::orderBy('id','desc')->take(1)->get();
         //$questions = Question::orderBy('id','desc')->get();
 
-        $registrations = Registration::orderBy('id','desc')->paginate(1);
+        $registrations = Registration::orderBy('id','desc')->paginate(10);
         return view ('registrations.index')->with('registrations', $registrations);
     }
 
@@ -53,7 +53,7 @@ class RegistrationsController extends Controller
         Registration::create($post);
 
         return redirect('/registrations/create')->with('status', 'Registracija atlikta!');
-        }
+    }
 
     /**
      * Display the specified resource.
