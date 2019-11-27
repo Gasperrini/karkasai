@@ -74,7 +74,8 @@ class RegistrationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $registrations = Registration::find($id);
+        return view('registrations.edit')->with('registrations', $registrations);
     }
 
     /**
@@ -86,7 +87,22 @@ class RegistrationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'vardas'    =>  'required',
+            'pavarde'    =>  'required',
+            'el_pastas'    =>  'required',
+            'tel_nr'    =>  'required',
+            'mokytojas_id'    =>  'required'
+        ]);
+        $post = Registration::find($id);
+        $post->vardas = $request->input('vardas');
+        $post->pavarde = $request->input('pavarde');
+        $post->el_pastas = $request->input('el_pastas');
+        $post->tel_nr = $request->input('tel_nr');
+        $post->mokytojas_id = $request->input('mokytojas_id');
+        $post->save();
+
+        return redirect('/registrations')->with('status', 'Registracija atnaujinta!');
     }
 
     /**
@@ -97,6 +113,8 @@ class RegistrationsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Registration::find($id);
+        $post->delete();
+        return redirect('/registrations')->with('status', 'Registracija panaikinta!');
     }
 }

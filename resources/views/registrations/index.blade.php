@@ -58,6 +58,12 @@
                 @else
                 <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Virgis Stakenas</h3>
                 @endif
+                <button><a href="/GitarosMeistrai/public/registrations/{{$registration->id}}/edit"><b>Redaguoti</b></a></button>
+                <form method="POST" action="{{route('registrations.destroy', $registration->id)}}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"><b>Trinti</b></button>
+                </form>
             @endforeach
             {{$registrations->links()}}
         @else
