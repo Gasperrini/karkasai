@@ -3,7 +3,7 @@
 @section('content')
 <nav role="navigation">
         <ul>
-            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
+            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../public/img/home.png"></a></li>
             <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
             <li><a class="active" href="create"><b>Registruokitės pamokoms</b></a></li>

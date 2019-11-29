@@ -28,7 +28,7 @@
 
 <div id="body">
     <div id="header">
-        <img class="img-gitaristas" src="img/gitaristas.png">
+        <img class="img-gitaristas" src="../../../../GitarosMeistrai/public/img/gitaristas.png">
         <h3 id="slogan">GitarosMeistrai.lt</h3>
     </div>
 

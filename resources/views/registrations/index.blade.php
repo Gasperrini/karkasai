@@ -3,11 +3,11 @@
 @section('content')
     <nav role="navigation">
         <ul>
-            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
+            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../../GitarosMeistrai/public/img/home.png"></a></li>
             <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
             <li><a href="registrations/create"><b>Registruokitės pamokoms</b></a></li>
-            <li style="float:right" class="active"><a href="questions/create"><b>Klauskite!</b></a></li>
+            <li style="float:right"><a href="questions/create"><b>Klauskite!</b></a></li>
                 <!-- Authentication Links -->
                 @guest
                     <li style="float:right">
@@ -24,7 +24,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a></li>
-                                    <li style="float:right"><a class="dropdown-item" href="admin">Administracijos puslapis</a></li>
+                                    <li style="float:right"><a class="active" href="admin">Administracijos puslapis</a></li>
     
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

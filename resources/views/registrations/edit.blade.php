@@ -3,10 +3,10 @@
 @section('content')
 <nav role="navigation">
         <ul>
-            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
+            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../../../GitarosMeistrai/public/img/home.png"></a></li>
             <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
-            <li><a class="active" href="create"><b>Registruokitės pamokoms</b></a></li>
+            <li><a href="create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right"><a href="/GitarosMeistrai/public/questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
@@ -24,7 +24,7 @@
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a></li>
-                            <li style="float:right"><a class="dropdown-item" href="admin">Administracijos puslapis</a></li>
+                            <li style="float:right"><a class="active" href="admin">Administracijos puslapis</a></li>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
@@ -49,10 +49,19 @@
         <b>Pasirinkite norimą gitaros mokytoją</b><br><br>
         @method('PUT')
         @csrf
-        <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
-        <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
-        <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
-
+        @if($registrations->mokytojas_id == 1)
+            <input type="radio" name="mokytojas_id" value="1" checked> Petras Petrauskas<br>
+            <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
+            <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
+        @elseif($registrations->mokytojas_id == 2)
+            <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
+            <input type="radio" name="mokytojas_id" value="2" checked> Andrius Rimiškis<br>
+            <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
+        @else
+            <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
+            <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
+            <input type="radio" name="mokytojas_id" value="3" checked> Virgis Stakėnas<br><br><br>
+        @endif
         <label for="vardas"><b>Vardas</b></label>
     <input type="text" value="{{$registrations->vardas}}" placeholder="Įveskite savo vardą" name="vardas" required>
 
