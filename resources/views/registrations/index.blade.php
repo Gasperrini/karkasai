@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
+@guest
+<h1 style="text-align:center"> Neturite teisės patekti į šį puslapį! <a href="login" style="color:white">PRISIJUNKITE!</a></h1>
+
+@else
+
 @section('content')
     <nav role="navigation">
         <ul>
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../../GitarosMeistrai/public/img/home.png"></a></li>
-            <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
             <li><a href="registrations/create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right"><a href="questions/create"><b>Klauskite!</b></a></li>
@@ -38,25 +42,25 @@
     </nav>
 
     <div id="content" style="text-align:center">
-            <button><a href="admin"><b>Atgal i administracijos puslapi</b></a></button>
-            <button><a href="questions"><b>Klientu klausimai</b></a></button> 
+            <button><a href="admin"><b>Atgal į administracijos puslapį</b></a></button>
+            <button><a href="questions"><b>Klientų klausimai</b></a></button> 
     </div>
 
     <div id ='content'>   
-        <h1 style="text-align:center">Klientu registracijos</h1>
+        <h1 style="text-align:center">Klientų registracijos</h1>
         @if(count($registrations) > 0)
         {{$registrations->links()}}
             @foreach($registrations as $registration)
                 <h3 style="padding-left:10px; padding-top:5px; border-top-style:solid; margin-top:0px; font-size:17px">Kliento vardas: {{$registration->vardas}}</h3>
-                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Kliento pavarde: {{$registration->pavarde}}</h3>
-                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Kliento el. pastas: {{$registration->el_pastas}}</h3>
+                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Kliento pavardė: {{$registration->pavarde}}</h3>
+                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Kliento el. paštas: {{$registration->el_pastas}}</h3>
                 <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Kliento tel. nr.: {{$registration->tel_nr}}</h3>
                 @if($registration->mokytojas_id == 1)
                 <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Petras Petrauskas</h3>
                 @elseif($registration->mokytojas_id ==2)
-                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Andrius Rimiskis</h3>
+                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Andrius Rimiškis</h3>
                 @else
-                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Virgis Stakenas</h3>
+                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">Pasirinktas mokytojas: Virgis Stakėnas</h3>
                 @endif
                 <button><a href="/GitarosMeistrai/public/registrations/{{$registration->id}}/edit"><b>Redaguoti</b></a></button>
                 <form method="POST" action="{{route('registrations.destroy', $registration->id)}}">
@@ -67,7 +71,31 @@
             @endforeach
             {{$registrations->links()}}
         @else
-            <p>Nera jokiu rezervaciju...</p>
+            <p>Nėra jokių rezervacijų...</p>
         @endif
     </div>
 @endsection
+@section('scripts')
+        <script>
+                //Get the button
+                var mybutton = document.getElementById("myBtn");
+
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function() {scrollFunction()};
+
+                function scrollFunction() {
+                  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                  } else {
+                    mybutton.style.display = "none";
+                  }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                }
+                </script>
+@endsection
+@endguest

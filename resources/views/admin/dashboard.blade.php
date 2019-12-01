@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @guest
-<h1 style="text-align:center"> Neturite teises patekti i si puslapi! <a href="login">PRISIJUNKITE!</a></h1>
+<h1 style="text-align:center"> Neturite teisės patekti į šį puslapį! <a href="login" style="color:white">PRISIJUNKITE!</a></h1>
 
 @else
 
@@ -11,7 +11,6 @@
     <nav role="navigation">
         <ul>
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
-            <li><a href="news"><b>Naujienos</b></a></li>
             <li><a href="guitarists"><b>Gitaristai</b></a></li>
             <li><a href="registrations/create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right"><a href="questions/create"><b>Klauskite!</b></a></li>
@@ -43,10 +42,10 @@
     </nav>
 
     <div id ='content' style="text-align:center">    
-        <h1 style="text-align:center">Sveiki prisijunge, {{Auth::user()->name}}</h1>
-        <h3 style="text-align:center">Pasirinkite ka norite perziureti</h1>
-            <button><a href="questions"><b>Klientu klausimai</b></a></button>
-            <button><a href="registrations"><b>Klientu registracijos</b></a></button>
+        <h1 style="text-align:center">Sveiki prisijungę, {{Auth::user()->name}}</h1>
+        <h3 style="text-align:center">Pasirinkite ką norite peržiūrėti</h1>
+            <button><a href="questions"><b>Klientų klausimai</b></a></button>
+            <button><a href="registrations"><b>Klientų registracijos</b></a></button>
     </div>
 
 @endsection

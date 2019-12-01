@@ -18,12 +18,6 @@ class MokytojaiController extends Controller
         return view ('pages.guitarists')->with('mokytojai', $mokytojai);
     }
 
-    public function index1()
-    {
-        $mokytojai = Mokytojai::orderBy('id','asc')->paginate(10);
-        return view ('registrations.index')->with('mokytojai', $mokytojai);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

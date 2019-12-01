@@ -15,11 +15,7 @@ Route::get('/', 'PagesController@index');
 
 Route::get('/contacts', 'PagesController@contacts');
 
-Route::get('/form', 'PagesController@form');
-
 Route::get('/guitarists', 'PagesController@guitarists');
-
-Route::get('/news', 'PagesController@news');
 
 Route::resource('questions', 'QuestionsController');
 
@@ -32,5 +28,3 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@dashboard');
 
 Route::resource('guitarists', 'MokytojaiController');
-
-//Route::get('registrations', 'MokytojaiController@index1');

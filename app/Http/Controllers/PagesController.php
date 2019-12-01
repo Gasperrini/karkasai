@@ -16,15 +16,7 @@ class PagesController extends Controller
         return view('pages.contacts');
     }
 
-    public function form(){
-        return view('pages.form');
-    }
-
     public function guitarists(){
         return view('pages.guitarists');
-    }
-
-    public function news(){
-        return view('pages.news');
     }
 }

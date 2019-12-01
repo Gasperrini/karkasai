@@ -1,12 +1,16 @@
 @extends('layouts.app')
 
+@guest
+<h1 style="text-align:center"> Neturite teisės patekti į šį puslapį! <a href="/GitarosMeistrai/public/login" style="color:white">PRISIJUNKITE!</a></h1>
+
+@else
+
 @section('content')
 <nav role="navigation">
         <ul>
             <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../../../GitarosMeistrai/public/img/home.png"></a></li>
-            <li><a href="/GitarosMeistrai/public/news"><b>Naujienos</b></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
-            <li><a href="create"><b>Registruokitės pamokoms</b></a></li>
+            <li><a href="/GitarosMeistrai/public/questions/create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right"><a href="/GitarosMeistrai/public/questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
@@ -24,7 +28,7 @@
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a></li>
-                            <li style="float:right"><a class="active" href="admin">Administracijos puslapis</a></li>
+                            <li style="float:right"><a class="active" href="/GitarosMeistrai/public/admin">Administracijos puslapis</a></li>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
@@ -37,7 +41,7 @@
 @yield('registration')
     <div id	="content"></div>
     <div id="content">
-        <h2 id="pageTitle">Redaguokite registracija</h2>
+        <h2 id="pageTitle">Redaguokite registraciją</h2>
 
     </div>
 
@@ -103,3 +107,4 @@
         }
     </script>
 @endsection
+@endguest

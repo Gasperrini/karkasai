@@ -4,9 +4,8 @@
 <nav role="navigation">
     <ul>
         <li><a href="/GitarosMeistrai/public"><img class="img-home" src="img/home.png"></a></li>
-        <li><a href="news"><b>Naujienos</b></a></li>
         <li><a href="guitarists"><b>Gitaristai</b></a></li>
-        <li><a href="form"><b>Registruokitės pamokoms</b></a></li>
+        <li><a href="/GitarosMeistrai/public/registrations/create"><b>Registruokitės pamokoms</b></a></li>
         <li style="float:right"><a href="contacts"><b>Klauskite!</b></a></li>
         <!-- Authentication Links -->
     @guest

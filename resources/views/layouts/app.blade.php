@@ -24,7 +24,7 @@
 <body>
 
 
-        <img class="myBtn-image" src="img/up.png" onclick="topFunction()" id="myBtn">
+        <img class="myBtn-image" src="../../../../GitarosMeistrai/public/img/up.png" onclick="topFunction()" id="myBtn">
 
 <div id="body">
     <div id="header">
