@@ -43,6 +43,13 @@
     <div>
 <form method="POST" action="{{route('registrations.store')}}">
     <div class="container">
+            @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li style = "color:red">{{ $error }}</li>
+                @endforeach
+            </ul>
+    @endif
         <p>Prašome užpildyti visus laukus.</p>
         <hr>
         <b>Pasirinkite norimą gitaros mokytoją</b><br><br>
@@ -52,16 +59,16 @@
         <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
 
         <label for="vardas"><b>Vardas</b></label>
-        <input type="text" placeholder="Įveskite savo vardą" name="vardas" required>
+        <input type="text" placeholder="Įveskite savo vardą" name="vardas" >
 
         <label for="pavarde"><b>Pavardė</b></label>
-        <input type="text" placeholder="Įveskite savo pavardę" name="pavarde" required>
+        <input type="text" placeholder="Įveskite savo pavardę" name="pavarde" >
        
         <label for="el_pastas"><b>El. paštas</b></label>
-        <input type="text" placeholder="Įveskite savo el. paštą" name="el_pastas" required>
+        <input type="text" placeholder="Įveskite savo el. paštą" name="el_pastas" >
 
         <label for="tel_nr"><b>Telefono nr.</b></label>
-        <input type="text" placeholder="Įveskite savo telefono nr." name="tel_nr" required>
+        <input type="text" placeholder="Įveskite savo telefono nr." name="tel_nr" >
         <hr>
         <button type="submit" class="registerbtn"><b>Registruotis</b></button>
     </div>

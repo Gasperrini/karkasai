@@ -46,6 +46,13 @@
             <div>
             <form method='POST' action="{{route('questions.store')}}">
                 <div class="container">
+                    @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li style = "color:red">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+            @endif
                   <p>Prašome užpildyti visus laukus.</p>
                   <hr>
                     @csrf

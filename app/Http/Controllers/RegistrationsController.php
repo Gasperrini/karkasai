@@ -44,8 +44,8 @@ class RegistrationsController extends Controller
         $request->validate([
             'vardas'    =>  'required',
             'pavarde'    =>  'required',
-            'el_pastas'    =>  'required',
-            'tel_nr'    =>  'required',
+            'el_pastas'    =>  'required|email',
+            'tel_nr'    =>  'required|digits:9',
             'mokytojas_id'    =>  'required'
         ]);
         $post = $request->all();
@@ -90,8 +90,8 @@ class RegistrationsController extends Controller
         $request->validate([
             'vardas'    =>  'required',
             'pavarde'    =>  'required',
-            'el_pastas'    =>  'required',
-            'tel_nr'    =>  'required',
+            'el_pastas'    =>  'required|email',
+            'tel_nr'    =>  'required|digits:9',
             'mokytojas_id'    =>  'required'
         ]);
         $post = Registration::find($id);

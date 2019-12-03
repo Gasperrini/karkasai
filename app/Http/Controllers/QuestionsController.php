@@ -42,7 +42,7 @@ class QuestionsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'el_pastas'    =>  'required',
+            'el_pastas'    =>  'required|email',
             'klausimas'    =>  'required'
         ]);
 
