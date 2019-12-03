@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
-@guest
-<h1 style="text-align:center"> Neturite teisės patekti į šį puslapį! <a href="/GitarosMeistrai/public/login" style="color:white">PRISIJUNKITE!</a></h1>
-
-@else
-
 @section('content')
 <nav role="navigation">
         <ul>
-            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../../../GitarosMeistrai/public/img/home.png"></a></li>
+            <li><a href="/GitarosMeistrai/public"><img class="img-home" src="../../public/img/home.png"></a></li>
             <li><a href="/GitarosMeistrai/public/guitarists"><b>Gitaristai</b></a></li>
-            <li><a href="/GitarosMeistrai/public/registrations/create"><b>Registruokitės pamokoms</b></a></li>
+            <li><a class="active" href="create"><b>Registruokitės pamokoms</b></a></li>
             <li style="float:right"><a href="/GitarosMeistrai/public/questions/create"><b>Klauskite!</b></a></li>
             <!-- Authentication Links -->
             @guest
@@ -28,7 +23,7 @@
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a></li>
-                            <li style="float:right"><a class="active" href="/GitarosMeistrai/public/admin">Administracijos puslapis</a></li>
+                            <li style="float:right"><a class="dropdown-item" href="/GitarosMeistrai/public/admin">Administracijos puslapis</a></li>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
@@ -41,12 +36,12 @@
 @yield('registration')
     <div id	="content"></div>
     <div id="content">
-        <h2 id="pageTitle">Redaguokite registraciją</h2>
+        <h2 id="pageTitle">Užsiregistruokite pas profesionalus jau dabar!</h2>
 
     </div>
 
     <div>
-<form method="POST" action="{{route('registrations.update', $registrations->id)}}">
+<form method="POST" action="{{route('guitarists.store')}}">
     <div class="container">
             @if ($errors->any())
             <ul>
@@ -57,35 +52,15 @@
     @endif
         <p>Prašome užpildyti visus laukus.</p>
         <hr>
-        <b>Pasirinkite norimą gitaros mokytoją</b><br><br>
-        @method('PUT')
         @csrf
-        @if($registrations->mokytojas_id == 1)
-            <input type="radio" name="mokytojas_id" value="1" checked> Petras Petrauskas<br>
-            <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
-            <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
-        @elseif($registrations->mokytojas_id == 2)
-            <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
-            <input type="radio" name="mokytojas_id" value="2" checked> Andrius Rimiškis<br>
-            <input type="radio" name="mokytojas_id" value="3"> Virgis Stakėnas<br><br><br>
-        @else
-            <input type="radio" name="mokytojas_id" value="1"> Petras Petrauskas<br>
-            <input type="radio" name="mokytojas_id" value="2"> Andrius Rimiškis<br>
-            <input type="radio" name="mokytojas_id" value="3" checked> Virgis Stakėnas<br><br><br>
-        @endif
+
         <label for="vardas"><b>Vardas</b></label>
-    <input type="text" value="{{$registrations->vardas}}" placeholder="Įveskite savo vardą" name="vardas" required>
+        <input type="text" placeholder="Įveskite gitaristo vardą" name="vardas" >
 
         <label for="pavarde"><b>Pavardė</b></label>
-        <input type="text" value="{{$registrations->pavarde}}" placeholder="Įveskite savo pavardę" name="pavarde" required>
-       
-        <label for="el_pastas"><b>El. paštas</b></label>
-        <input type="text" value="{{$registrations->el_pastas}}" placeholder="Įveskite savo el. paštą" name="el_pastas" required>
-
-        <label for="tel_nr"><b>Telefono nr.</b></label>
-        <input type="text" value="{{$registrations->tel_nr}}" placeholder="Įveskite savo telefono nr." name="tel_nr" required>
+        <input type="text" placeholder="Įveskite gitaristo pavardę" name="pavarde" >
         <hr>
-        <button type="submit" class="registerbtn"><b>Atnaujinti</b></button>
+        <button type="submit" class="registerbtn"><b>Registruotis</b></button>
     </div>
     </form>
     </div>
@@ -114,4 +89,3 @@
         }
     </script>
 @endsection
-@endguest

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Mokytojai;
-class MokytojaiController extends Controller
+
+class GuitaristsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class MokytojaiController extends Controller
      */
     public function index()
     {
-        $mokytojai = Mokytojai::orderBy('id','asc')->paginate(10);
-        return view ('pages.guitarists')->with('mokytojai', $mokytojai);
+        $guitarists = Mokytojai::orderBy('id','asc')->paginate(10);
+        return view ('guitarists.show')->with('mokytojai', $guitarists);
     }
 
     /**
@@ -25,7 +26,7 @@ class MokytojaiController extends Controller
      */
     public function create()
     {
-        return view('guitarists.create');
+        //
     }
 
     /**
@@ -36,16 +37,7 @@ class MokytojaiController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'vardas'    =>  'required',
-            'pavarde'    =>  'required'
-        ]);
-
-        $post = $request->all();
-
-        Mokytojai::create($post);
-
-        return redirect('/guitarists/create')->with('status', 'Klausimas issiustas!');
+        //
     }
 
     /**
@@ -90,8 +82,6 @@ class MokytojaiController extends Controller
      */
     public function destroy($id)
     {
-        $post = Mokytojai::find($id);
-        $post->delete();
-        return redirect('/guitarists')->with('status', 'Registracija panaikinta!');
+        //
     }
 }

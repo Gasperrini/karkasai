@@ -36,6 +36,7 @@
 
     <div id="content">
         <h2 id="pageTitle">Mūsų gitaristai</h2>
+        <button><a href="/GitarosMeistrai/public/guitarists/create"><b>Prideti gitarista</b></button>
         <h3 style="text-align: center">(Spauskite ant nuotraukos išsamiai informacijai)</h3>
         <p>
 
@@ -46,6 +47,17 @@
             <b style="padding-left: 175px; padding-right: 100px">{{$mokytojai[1]->vardas}} {{$mokytojai[1]->pavarde}}</b>
             <b style="float:right; padding-right: 65px">{{$mokytojai[2]->vardas}} {{$mokytojai[2]->pavarde}}</b>
         </p>
+
+        @foreach($mokytojai as $mokytojas)
+                <h3 style="padding-left:10px; margin-top:0px; font-size:17px">{{$mokytojas->vardas}}</h3>
+                <h5 style="padding-left:10px; margin-top:0px;">{{$mokytojas->pavarde}}</h5>
+                <img src="../../../../GitarosMeistrai/public/img/gitaristas-{{$mokytojas->id}}.jpg">
+                <form method="POST" action="{{route('guitarists.destroy', $mokytojas->id)}}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"><b>Trinti</b></button>
+                </form>
+            @endforeach
 
         <h2>Išdrįskite pradėti groti gitara jau šiandien!</h2>
         <h1 style="text-align: center">Pasirinkite jūsų norus atitinkantį mokytoją</h1>
